@@ -4,3 +4,48 @@ body,
   margin: 0;
   padding: 0;
 }
+
+input {
+  outline: none;
+}
+
+.time-input.invalid {
+  border: red solid 1px;
+}
+
+.time-input {
+  display: inline-block;
+  border-radius: 2px;
+  border: solid 1px #555;
+}
+
+.time-input input {
+  border: none;
+  text-align: end;
+  border: none;
+  width: 0.01em;
+  color: transparent;
+  caret-color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+.time-input:has(input:focus), .time-input:active {
+  background: #eee;
+}
+
+.time-input:active > input,
+.time-input > input:focus {
+  background: #eee;
+}
