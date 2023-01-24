@@ -6,6 +6,12 @@ export function CarDisplay({
   verticalFOV,
   horizontalFOV,
   distance,
+}: { 
+  monitorWidth: number,
+  monitorHeight: number,
+  verticalFOV: number,
+  horizontalFOV: number,
+  distance: number
 }) {
   const headRadius = 12
 

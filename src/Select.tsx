@@ -10,11 +10,11 @@ export function Select({
   children: ReactNode
 }) {
   return (
-    <div>
+    <>
       <label>{label}</label>
       <select value={value} onChange={e => onChange(e.target.value)}>
         {children}
       </select>
-    </div>
+    </>
   )
 }

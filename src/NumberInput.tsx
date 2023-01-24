@@ -18,16 +18,18 @@ export function NumberInput({
   )
 
   return (
-    <div>
+    <>
       <label>{label}</label>
-      <input
-        onKeyDown={onKeyDown}
-        style={{ width: 30 }}
-        pattern="\d*"
-        value={isNaN(value) ? '' : value}
-        onChange={e => onChange(parseInt(e.target.value))}
-      />
-      {unit}
-    </div>
+      <span>
+        <input
+          onKeyDown={onKeyDown}
+          style={{ width: 30 }}
+          pattern="\d*"
+          value={isNaN(value) ? '' : value}
+          onChange={e => onChange(parseInt(e.target.value))}
+        />
+        {unit}
+      </span>
+    </>
   )
 }

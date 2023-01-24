@@ -8,7 +8,11 @@ export function DurationInput({
   value: [number, Dispatch<number>]
 }) {
   const [[hrs, min, sec], set] = useState([0, 0, 0])
-  const [_value, _setValue] = useState(value)
+  const [_value, _setValue] = useState(
+    Math.floor(value / 3600) +
+      Math.floor((value % 3600) / 60) * 100 +
+      (value % 60)
+  )
   const $input = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -26,7 +30,7 @@ export function DurationInput({
   const onRecalc = useCallback(() => {}, [_value])
 
   return (
-    <div>
+    <div className="row">
       <span className="time-input" onClick={() => $input.current?.focus()}>
         {pad(hrs)}:{pad(min)}:{pad(sec)}
         <input
